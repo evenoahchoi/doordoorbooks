@@ -19,6 +19,10 @@ const NAV_ITEMS: Array<NavItem> = [
     label: "소개",
     page: "about",
   },
+  {
+    label: "연락하기",
+    page: "contact",
+  },
 ];
 
 export default function Navbar() {
@@ -33,10 +37,8 @@ export default function Navbar() {
       <div className="justify-between md:items-center md:flex">
         <div>
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
-            <Link to="home">
-              <div className="container flex items-center space-x-2">
-                <h2 className="text-2xl font-bold">도도북스</h2>
-              </div>
+            <Link to="home" className="text-2xl font-bold">
+              도도북스
             </Link>
             <div className="md:hidden">
               <button
