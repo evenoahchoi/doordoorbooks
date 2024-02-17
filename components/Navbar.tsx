@@ -37,6 +37,7 @@ export default function Navbar() {
       <div className="justify-between md:items-center md:flex">
         <div>
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
+            {/* Link 컴포넌트의 자식으로 div 대신 a 태그를 사용합니다. */}
             <Link to="home" className="text-2xl font-bold">
               도도북스
             </Link>
