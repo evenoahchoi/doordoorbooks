@@ -51,6 +51,18 @@ const EmailForm = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+    // 날짜를 문자열 형식으로 변환 (예: 'YYYY-MM-DD')
+    const dateString = formData.date ? formData.date.format("YYYY-MM-DD") : "";
+
+    // 숨겨진 입력 필드를 생성하여 폼에 날짜 문자열 값을 설정
+    const hiddenDateInput = document.createElement("input");
+    hiddenDateInput.type = "hidden";
+    hiddenDateInput.name = "date";
+    hiddenDateInput.value = dateString;
+
+    // 폼에 숨겨진 입력 필드 추가
+    e.currentTarget.appendChild(hiddenDateInput);
+
     // 이메일 전송 로직
     emailjs
       .sendForm(
@@ -68,7 +80,11 @@ const EmailForm = () => {
           console.log(error.text);
           alert("수거신청 전송에 실패했습니다.");
         }
-      );
+      )
+      .finally(() => {
+        // 폼에서 숨겨진 입력 필드 제거
+        e.currentTarget.removeChild(hiddenDateInput);
+      });
 
     // 폼 데이터 초기화
     setFormData({
