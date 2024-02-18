@@ -166,12 +166,13 @@ const EmailForm = () => {
       {isClient && isOpen && (
         <Modal
           title="주소 검색"
-          visible={isOpen} // visible 속성 추가
+          visible={isOpen}
           onOk={onToggleModal}
           onCancel={onToggleModal}
           footer={null}
         >
-          <DaumPostcode onComplete={handleComplete} />
+          {/* DaumPostcode 컴포넌트를 React.createElement로 명시적으로 생성 */}
+          {React.createElement(DaumPostcode, { onComplete: handleComplete })}
         </Modal>
       )}
     </div>
