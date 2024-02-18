@@ -4,7 +4,7 @@ export default function Header() {
     return (
         <header className="text-gray-600 body-font border-b border-gray-300"> {/* 하단 선을 추가 */}
             <div className="container mx-auto flex flex-wrap p-2 flex-col md:flex-row items-center">
-                <Link legacyBehavior href="/showreel">
+                <Link legacyBehavior href="/">
                   <h1 className="text-center font-bold text-4xl">도도북스</h1>
                 </Link>
                 <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
