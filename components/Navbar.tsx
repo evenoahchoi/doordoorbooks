@@ -1,67 +1,19 @@
-"use client"; // this is a client component
-import React, { useState } from "react";
-import { Link } from "react-scroll";
-import { RiMoonFill, RiSunLine } from "react-icons/ri";
-import { IoMdMenu, IoMdClose } from "react-icons/io";
-import { useTheme } from "next-themes";
+import Link from "next/link";
 
-interface NavItem {
-  label: string;
-  page: string;
-}
-
-const NAV_ITEMS: Array<NavItem> = [
-  {
-    label: "홈",
-    page: "home",
-  },
-  {
-    label: "소개",
-    page: "about",
-  },
-  {
-    label: "연락하기",
-    page: "contact",
-  },
-];
-
-export default function Navbar() {
-  const { theme, setTheme } = useTheme();
-  const [navbar, setNavbar] = useState(false);
-
-  return (
-    <header className="w-full fixed top-0 z-50 bg-white dark:bg-black shadow">
-      <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center justify-between">
-        <div className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
-          <span className="ml-3 text-3xl font-bold">도도북스</span>
-        </div>
-        <div className="md:hidden">
-          <button
-            className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"
-            onClick={() => setNavbar(!navbar)}
-          >
-            {navbar ? <IoMdClose size={30} /> : <IoMdMenu size={30} />}
-          </button>
-        </div>
-        <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
-          {NAV_ITEMS.map((item, idx) => (
-            <Link
-              key={idx}
-              to={item.page}
-              className="mr-5 hover:text-gray-900"
-              activeClass="active"
-              spy={true}
-              smooth={true}
-              offset={-100}
-              duration={500}
-              onClick={() => setNavbar(!navbar)}
-            >
-              {item.label}
-            </Link>
-          ))}
-        </nav>
-      </div>
-      <div className="border-t border-gray-300"></div> {/* 헤더 아래에 한 줄 추가 */}
-    </header>
-  );
+export default function Header() {
+    return (
+        <header className="text-gray-600 body-font border-b border-gray-300"> {/* 하단 선을 추가 */}
+            <div className="container mx-auto flex flex-wrap p-2 flex-col md:flex-row items-center">
+                <Link legacyBehavior href="/showreel">
+                  <h1 className="text-center font-bold text-4xl">도도북스</h1>
+                </Link>
+                <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
+                    <Link legacyBehavior href="/"><a className="mr-5 hover:text-gray-900">홈</a></Link>
+                    <Link legacyBehavior href="/"><a className="mr-5 hover:text-gray-900">소개</a></Link>
+                    <Link legacyBehavior href="/contact"><a className="mr-5 hover:text-gray-900">신청하기</a></Link>
+                    <Link legacyBehavior href="/mypage"><a className="mr-5 hover:text-gray-900">마이페이지</a></Link>
+                </nav>
+            </div>
+        </header>
+    );
 }

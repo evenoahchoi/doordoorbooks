@@ -1,0 +1,76 @@
+.email-form-container {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-radius: 8px;
+  }
+
+  .email-form-container h1 {
+    margin-bottom: 0.5em;
+  }
+
+  .email-form-container p {
+    color: #666;
+    margin-bottom: 2em;
+  }
+
+  .email-form .form-group {
+    margin-bottom: 1em;
+  }
+
+  .email-form .form-group input,
+  .email-form .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 0.5em 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+
+  .email-form .form-group textarea {
+    height: 150px;
+  }
+
+  .submit-button {
+    padding: 10px 20px;
+    background: #14b8a6;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .submit-button:hover {
+    background: #0056b3;
+  }
+
+  .contact-info p {
+    color: #666;
+  }
+
+  .address-input-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .address-input {
+    flex-grow: 1;
+    margin-right: 10px; /* 주소 입력 필드와 검색 버튼 사이의 간격 */
+  }
+  
+  .address-search-button {
+    background-color: #14b8a6; /* '수거 신청하기' 버튼과 동일한 색상 */
+    border-color: #14b8a6; /* 버튼 테두리도 동일한 색상으로 */
+    color: #fff; /* 텍스트 색상은 흰색 */
+    /* 마우스를 올렸을 때의 스타일이 필요하면 아래를 추가합니다. */
+    /* 예: 색상을 약간 어둡게 변경하려면 */
+    /* &:hover {
+      background-color: darken(#14b8a6, 10%);
+      border-color: darken(#14b8a6, 10%);
+    } */
+  }
